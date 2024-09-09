@@ -1,4 +1,15 @@
 
+:root{
+--blanco: #ffffffff;
+--oscuro: #212121;
+--primario: #ffc107;
+--secundario: #0097a7;
+--gris: #757575;
+}
+
+
+/*un elefante se columpiaba*/
+
 html{
     font-size: 62.5%;
 }
@@ -17,4 +28,34 @@ body{
 
 .titulo span{
     font-size: 2rem;
+}
+
+.navegacion-principal{
+    text-align: center;
+    background-color: var(--secundario);
+    padding: 1rem;
+    display: flex;
+    justify-content:space-between;
+    font-weight: bold;
+    font-size: 2rem;;
+}
+
+/*al poner el cursor en el hipervinculo*/
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none; /*remueve el estilo subrayado en el texto*/
+}
+
+.contenedor{
+    width: 120rem; /*120 pixeles porque 1 rem = 10px */
+    margin:0 auto;
+}
+
+.nav-bg{
+    background-color: var(--secundario);
 }

@@ -17,6 +17,32 @@ html{
 body{
     font-size: 16px;
 }
+/* Se aplica desde 0 pixeles */
+
+body{
+    background-color: bisque;
+}
+
+/*Recomendado 480 px para moviles
+760 px para tablets*/
+
+@media (min-width:480px){
+
+    body{
+        background-color: blue;
+    }
+}
+
+@media(min-width: 768px){
+    .navegacion-principal{
+        flex-direction: row;
+        
+    }
+
+    body{
+        background-color: cornflowerblue;
+    }
+}
 
 /*El punto es para hacer referencia en clases*/
 
@@ -37,9 +63,17 @@ body{
     display: flex;
     justify-content:space-between;
     font-weight: bold;
-    font-size: 2rem;;
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: center;
 }
 
+@media (min-width: 768px){
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+ }
 /*al poner el cursor en el hipervinculo*/
 .navegacion-principal a:hover{
     background-color: var(--primario);
@@ -58,4 +92,10 @@ body{
 
 .nav-bg{
     background-color: var(--secundario);
+}
+
+.hero{
+    background-image: url(../img/hero.jpeg); /* "../" es para regresar un nivel de directorio ya que la carpeta "img" esta fuera de "CSS" */
+    background-repeat: no-repeat; /*dirve para evitar la repeticion de la imagen cuando es pequeña*/
+    background-size: cover; /*sirve para cubrir la imagen con todo el tamaño*/
 }

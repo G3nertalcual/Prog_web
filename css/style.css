@@ -4,9 +4,11 @@
 --oscuro: #212121;
 --primario: #ffc107;
 --secundario: #0097a7;
+--secundario_osc: #0096a7b7;
 --gris: #757575;
+--grisclaro: #b6b6b6;
+font-family: "krub","system-ui";
 }
-
 
 /*un elefante se columpiaba*/
 
@@ -16,36 +18,15 @@ html{
 
 body{
     font-size: 16px;
+    background: linear-gradient(to bottom, var(--blanco), var(--grisclaro)); /* De blanco a gris claro */
+    margin: 0;
+    font-family: 'Krub', sans-serif; /* Asegúrate de que la fuente se aplique correctamente */
 }
+
 /* Se aplica desde 0 pixeles */
-
-body{
-    background-color: bisque;
-}
-
 /*Recomendado 480 px para moviles
 760 px para tablets*/
-
-@media (min-width:480px){
-
-    body{
-        background-color: blue;
-    }
-}
-
-@media(min-width: 768px){
-    .navegacion-principal{
-        flex-direction: row;
-        
-    }
-
-    body{
-        background-color: cornflowerblue;
-    }
-}
-
 /*El punto es para hacer referencia en clases*/
-
 
 .titulo{
    text-align: center;
@@ -58,20 +39,20 @@ body{
 
 .navegacion-principal{
     text-align: center;
-    background-color: var(--secundario);
+/*    background-color: var(--secundario);*/
+    flex-direction: column;
     padding: 1rem;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     font-weight: bold;
     font-size: 2rem;
-    flex-direction: column;
     align-items: center;
 }
 
 @media (min-width: 768px){
     .navegacion-principal{
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
     }
  }
 /*al poner el cursor en el hipervinculo*/
@@ -83,10 +64,11 @@ body{
 .navegacion-principal a{
     color: var(--blanco);
     text-decoration: none; /*remueve el estilo subrayado en el texto*/
+    padding: 0.5rem 1rem; /* Añade un padding a los enlaces para más espacio */
 }
 
 .contenedor{
-    width: 120rem; /*120 pixeles porque 1 rem = 10px */
+    max-width: 120rem; /*120 pixeles porque 1 rem = 10px */
     margin:0 auto;
 }
 
@@ -95,7 +77,93 @@ body{
 }
 
 .hero{
-    background-image: url(../img/hero.jpeg); /* "../" es para regresar un nivel de directorio ya que la carpeta "img" esta fuera de "CSS" */
+    background-image: url(../img/hero.jpg); /* "../" es para regresar un nivel de directorio ya que la carpeta "img" esta fuera de "CSS" */
     background-repeat: no-repeat; /*dirve para evitar la repeticion de la imagen cuando es pequeña*/
     background-size: cover; /*sirve para cubrir la imagen con todo el tamaño*/
+    height: 450px;/*Alto del elemento hero*/
+    position: relative;/*para manipular la posicion. el padre siempre debe ser relativo*/
 }
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0,.7);
+    width: 100%;
+    height: 100%;
+    /*alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+
+}
+html{font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 16px;
+    font-family: 'Krub',sans-serif;
+}
+/*tipografia*/
+
+h1{
+    font-size: 3.8rem;
+}
+
+h2{font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+.titulo span{
+    font-size: 2rem;
+}
+
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px; /* Espacio entre el icono y el texto */
+}
+
+.ubicacion svg {
+    width: 80px; /* Ajusta el tamaño según sea necesario */
+    height: 80px;
+    
+}
+
+.ubicacion p {
+    margin: 10px 0 0;
+}
+
+
+.boton-contacto {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 2rem;
+    background-color: var(--secundario); /* Azul */
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.boton-contacto:hover {
+    background-color: var(--secundario_osc); /* Azul más oscuro */
+}
+
+@media (max-width: 768px){
+
+    .boton-contacto{
+        width: 90%;
+        text-align: center;
+    }
+ }

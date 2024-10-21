@@ -1,45 +1,42 @@
-
-:root{
---blanco: #ffffffff;
---oscuro: #212121;
---primario: #ffc107;
---secundario: #0097a7;
---secundario_osc: #0096a7b7;
---gris: #757575;
---grisclaro: #b6b6b6;
-font-family: "krub","system-ui";
+:root {
+    --blanco: #ffffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --secundario_osc: #0096a7b7;
+    --gris: #757575;
+    --grisclaro: #b6b6b6;
+    font-family: "krub", "system-ui";
 }
 
-/*un elefante se columpiaba*/
-
-html{
-    font-size: 62.5%;
+/* Se ajusta la raíz: 1 rem = 10px */
+html {
+    font-size: 62.5%; 
+    scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
-body{
-    font-size: 16px;
+body {
+    font-size: 16px; /* Establece el tamaño base del texto */
     background: linear-gradient(to bottom, var(--blanco), var(--grisclaro)); /* De blanco a gris claro */
     margin: 0;
     font-family: 'Krub', sans-serif; /* Asegúrate de que la fuente se aplique correctamente */
 }
 
-/* Se aplica desde 0 pixeles */
-/*Recomendado 480 px para moviles
-760 px para tablets*/
-/*El punto es para hacer referencia en clases*/
+/* Se aplica desde 0 píxeles */
+/* Recomendado: 480 px para móviles y 760 px para tablets */
 
-.titulo{
-   text-align: center;
-   font-size: 3.8rem; 
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
 }
 
-.titulo span{
+.titulo span {
     font-size: 2rem;
 }
 
-.navegacion-principal{
+/* Navegación principal */
+.navegacion-principal {
     text-align: center;
-/*    background-color: var(--secundario);*/
     flex-direction: column;
     padding: 1rem;
     display: flex;
@@ -49,121 +46,156 @@ body{
     align-items: center;
 }
 
-@media (min-width: 768px){
-    .navegacion-principal{
-        flex-direction: row;
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row; /* Navegación horizontal en pantallas grandes */
         justify-content: center;
     }
- }
-/*al poner el cursor en el hipervinculo*/
-.navegacion-principal a:hover{
-    background-color: var(--primario);
-    color: var(--oscuro);
 }
 
-.navegacion-principal a{
-    color: var(--blanco);
-    text-decoration: none; /*remueve el estilo subrayado en el texto*/
-    padding: 0.5rem 1rem; /* Añade un padding a los enlaces para más espacio */
+/* Al poner el cursor sobre un enlace */
+.navegacion-principal a:hover {
+    background-color: var(--primario); /* Fondo amarillo */
+    color: var(--oscuro); /* Texto oscuro */
 }
 
-.contenedor{
-    max-width: 120rem; /*120 pixeles porque 1 rem = 10px */
-    margin:0 auto;
+.navegacion-principal a {
+    color: var(--blanco); /* Enlaces en blanco */
+    text-decoration: none; /* Quita el subrayado */
+    padding: 0.5rem 1rem; /* Espacio en los enlaces */
 }
 
-.nav-bg{
-    background-color: var(--secundario);
+/* Contenedor principal */
+.contenedor {
+    max-width: 120rem; /* 1rem = 10px, entonces 120rem = 1200px */
+    margin: 0 auto;
 }
 
-.hero{
-    background-image: url(../img/hero.jpg); /* "../" es para regresar un nivel de directorio ya que la carpeta "img" esta fuera de "CSS" */
-    background-repeat: no-repeat; /*dirve para evitar la repeticion de la imagen cuando es pequeña*/
-    background-size: cover; /*sirve para cubrir la imagen con todo el tamaño*/
-    height: 450px;/*Alto del elemento hero*/
-    position: relative;/*para manipular la posicion. el padre siempre debe ser relativo*/
+/* Fondo del menú de navegación */
+.nav-bg {
+    background-color: var(--secundario); /* Color secundario (azul) */
 }
 
-.contenido-hero{
+/* Sección Hero */
+.hero {
+    background-image: url(../img/hero.jpg); /* Imagen de fondo */
+    background-repeat: no-repeat;
+    background-size: cover; /* Cubrir toda la sección */
+    height: 450px; /* Alto del Hero */
+    position: relative;
+}
+
+.contenido-hero {
     position: absolute;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0, 0, 0, .7); /* Fondo semi-transparente negro */
     width: 100%;
     height: 100%;
-    /*alinear vertical y horizontalmente*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--blanco);
+    color: var(--blanco); /* Texto en blanco */
+}
 
-}
-html{font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-body{
-    font-size: 16px;
-    font-family: 'Krub',sans-serif;
-}
-/*tipografia*/
-
-h1{
+/* Tipografía global para títulos */
+h1 {
     font-size: 3.8rem;
 }
 
-h2{font-size: 2.8rem;
+h2 {
+    font-size: 2.8rem;
 }
 
 h3 {
     font-size: 1.8rem;
 }
 
-h1,h2,h3{
+h1, h2, h3 {
     text-align: center;
 }
 
-.titulo span{
+/* Configuración específica del título */
+.titulo span {
     font-size: 2rem;
 }
 
-
+/* Sección de ubicación */
 .ubicacion {
     display: flex;
     align-items: flex-end;
-    gap: 5px; /* Espacio entre el icono y el texto */
+    gap: 5px; /* Espacio entre el ícono y el texto */
 }
 
 .ubicacion svg {
-    width: 80px; /* Ajusta el tamaño según sea necesario */
+    width: 80px; /* Tamaño del ícono */
     height: 80px;
-    
 }
 
 .ubicacion p {
     margin: 10px 0 0;
 }
 
-
+/* Botón de contacto */
 .boton-contacto {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 2rem;
-    background-color: var(--secundario); /* Azul */
+    background-color: var(--secundario); /* Fondo azul */
     color: #ffffff; /* Texto blanco */
     font-size: 16px;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none; /* Quita el subrayado */
     border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Efecto de transición */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
 }
 
 .boton-contacto:hover {
-    background-color: var(--secundario_osc); /* Azul más oscuro */
+    background-color: var(--secundario_osc); /* Azul más oscuro en hover */
 }
 
-@media (max-width: 768px){
-
-    .boton-contacto{
-        width: 90%;
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .boton-contacto {
+        width: 90%; /* Aumenta el ancho al 90% en pantallas pequeñas */
         text-align: center;
     }
- }
+}
+
+/* Servicios */
+/* Grid de 3 columnas en pantallas grandes */
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+            /*grid-template-columns: 1fr 1fr 1fr; Por fracciones*/
+            /*grid-template-columns 33.3% 33.3% 33.3% 33.3%; Por porcentaje*/
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+        column-gap: 1rem;
+    }   
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3{
+        color: var(--secundario);
+        font-weight: lighter;
+    }
+
+    p{
+        text-align: center;
+        line-height: 2;
+    }
+
+.iconos{
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+}

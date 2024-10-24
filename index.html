@@ -51,7 +51,7 @@
                 <p>Mérida, Yucatán</p>
             </div>
 
-            <a href="#contacto" class="boton-contacto">Contactar</a>
+            <a href="#contacto" class="boton">Contactar</a>
         </div>
     </section>
 
@@ -114,47 +114,51 @@
             </section>
 
         </div>
-    </main>
 
     <!-- Contact Section -->
     <section id="contacto">
         <h2>Contacto</h2>
-        <form>
+        <form class="formulario">
             <fieldset>
-                <legend>Llena tus datos de contacto</legend>
                 
-                <div>
+                <legend>Llena tus datos de contacto</legend>
+                <div class="contenedor-campos">
+                <div class="campo">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" placeholder="Tu Nombre">
                 </div>
 
-                <div>
+                <div class="campo">
                     <label for="telefono">Teléfono</label>
                     <input type="tel" id="telefono" placeholder="Tu Teléfono">
                 </div>
 
-                <div>
+                <div class="campo">
                     <label for="correo">Correo</label>
                     <input type="email" id="correo" placeholder="Tu Correo">
                 </div>
 
-                <div>
+                <div class="campo">
                     <label for="mensaje">Mensaje</label>
                     <textarea id="mensaje" placeholder="Tu Mensaje"></textarea>
                 </div>
+                
+                </div>
 
-                <div>
-                    <input type="submit" value="Enviar">
+                <div class="alinear-derecha flex">
+                    <input class="boton w-sm-100" type="submit" value="Enviar" >
+                    <a href="#"></a>
                 </div>
             </fieldset>
         </form>
     </section>
-
+    </main>
     <!-- Footer -->
+     <div class="footer">
     <footer>
         <p>Todos los derechos reservados &#169; Gener Alejandro Vallejos Pech</p>
     </footer>
-
+    </div>
 </body>
 
 </html>
